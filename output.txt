@@ -1,0 +1,8 @@
+Team: Team A
+Player               Runs Balls     S/R
+-------------------------------------------------
+Player 1               45    30    150.00
+Player 2               78    50    156.00
+Player 3               34    25    136.00
+Player 4               55    40    137.50
+Player 5               23    15    153.33

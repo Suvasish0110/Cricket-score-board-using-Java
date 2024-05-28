@@ -1,0 +1,54 @@
+class Player {
+    String name;
+    int runs;
+    int balls;
+
+    Player(String name, int runs, int balls) {
+        this.name = name;
+        this.runs = runs;
+        this.balls = balls;
+    }
+
+    double getStrikeRate() {
+        return (runs * 100.0) / balls;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-20s %5d %5d %8.2f", name, runs, balls, getStrikeRate());
+    }
+}
+
+class Team {
+    String name;
+    Player[] players;
+
+    Team(String name, Player[] players) {
+        this.name = name;
+        this.players = players;
+    }
+
+    void displayScoreBoard() {
+        System.out.println("Team: " + name);
+        System.out.println(String.format("%-20s %5s %5s %8s", "Player", "Runs", "Balls", "S/R"));
+        System.out.println("-------------------------------------------------");
+        for (Player player : players) {
+            System.out.println(player);
+        }
+    }
+}
+
+public class CricketScoreBoard {
+    public static void main(String[] args) {
+        Player[] players = {
+            new Player("Player 1", 45, 30),
+            new Player("Player 2", 78, 50),
+            new Player("Player 3", 34, 25),
+            new Player("Player 4", 55, 40),
+            new Player("Player 5", 23, 15)
+        };
+
+        Team team = new Team("Team A", players);
+        team.displayScoreBoard();
+    }
+}
